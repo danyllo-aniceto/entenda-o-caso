@@ -4,4 +4,7 @@ export interface IInputProps
   asTextarea?: boolean;
   rows?: number;
   cols?: number;
+  labelFontSize?: string;
+  labelFontWeight?: string;
+  labelFontFamily?: string;
 }

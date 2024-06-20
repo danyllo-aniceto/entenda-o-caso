@@ -1,6 +1,19 @@
-import { Container, Form, Header, Logo, TextTitle, Title } from "./style";
+import {
+  Button,
+  Container,
+  Divider,
+  Form,
+  Header,
+  ImageButton,
+  Logo,
+  TextButton,
+  TextTitle,
+  Title,
+  ContentDivider,
+} from "./style";
 
 import logo from "./../../assets/logo.png";
+import send from "./../../assets/send.png";
 import { Input } from "../../components/Input";
 
 export function Dashboard() {
@@ -42,6 +55,24 @@ export function Dashboard() {
         <Input
           label="Deseja incluir um link para um vídeo do Youtube?"
           placeholder="Insira a Insira o Link completo ex.: https://www.google.com/ de publicação da notícia."
+          rows={4}
+          asTextarea
+        />
+        <Button>
+          <TextButton>Gerar</TextButton>
+          <ImageButton src={send} alt="send" />
+        </Button>
+        <ContentDivider>
+          <Divider />
+        </ContentDivider>
+
+        <Input
+          label="Saídas Geradas"
+          asTextarea
+          readOnly
+          rows={14}
+          labelFontSize="28px"
+          labelFontFamily="Gabarito, sans-serif"
         />
       </Form>
     </Container>

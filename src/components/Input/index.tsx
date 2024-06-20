@@ -6,11 +6,20 @@ export function Input({
   asTextarea,
   rows,
   cols,
+  labelFontSize = "17.5px",
+  labelFontWeight = "400",
+  labelFontFamily = "Inter, sans-serif;",
   ...props
 }: IInputProps) {
   return (
     <InputContainer>
-      <Label>{label}</Label>
+      <Label
+        fontSize={labelFontSize}
+        fontWeight={labelFontWeight}
+        fontFamily={labelFontFamily}
+      >
+        {label}
+      </Label>
       {asTextarea ? (
         <TextArea
           rows={rows}

@@ -38,4 +38,49 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-inline: 189px;
+`;
+
+export const Button = styled.button`
+  width: 93px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid rgba(171, 255, 179, 1);
+  background-color: rgba(171, 255, 179, 1);
+  padding: 10.5px, 17.5px, 10.5px, 17.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fc4a04;
+    border-color: #fc4a04;
+    color: white;
+  }
+`;
+
+export const TextButton = styled.span`
+  font-family: "Gabarito", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  // line-height: 16.8px;
+`;
+
+export const ImageButton = styled.img`
+  width: 14px;
+  height: 14px;
+`;
+
+export const ContentDivider = styled.div`
+  padding-block: 36px;
+`;
+
+export const Divider = styled.div`
+  //width: 1241px;
+  height: 1px;
+  background-color: rgba(229, 231, 235, 1);
+  padding: 17.5px, 0px, 17.5px, 0px;
+  display: flex;
 `;

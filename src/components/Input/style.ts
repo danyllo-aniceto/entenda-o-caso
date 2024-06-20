@@ -3,13 +3,17 @@ import styled from "styled-components";
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-inline: 189px;
+  margin-bottom: 10px;
 `;
 
-export const Label = styled.label`
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 17.5px;
+export const Label = styled.label<{
+  fontSize: string;
+  fontWeight: string;
+  fontFamily: string;
+}>`
+  font-family: ${({ fontFamily }) => fontFamily};
+  font-size: ${({ fontSize }) => fontSize};
+  font-weight: ${({ fontWeight }) => fontWeight};
   line-height: 26.25px;
   color: rgba(0, 0, 0, 1);
 `;
@@ -22,7 +26,8 @@ const inputStyles = `
   transition: border-color 0.3s;
 
   &:focus {
-    border-color: orange;
+    border-color: 
+#fc4a04;
     outline: none;
   }
 
@@ -40,4 +45,5 @@ export const StyledInput = styled.input`
 
 export const TextArea = styled.textarea`
   ${inputStyles}
+  resize: none;
 `;
