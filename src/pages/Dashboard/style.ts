@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100vh;
 `;
 
 export const Header = styled.header`
@@ -12,6 +13,7 @@ export const Header = styled.header`
   background-color: rgba(171, 255, 179, 1);
   border-bottom: 1px solid rgba(224, 224, 224, 1);
   position: fixed;
+  z-index: 1000;
 `;
 
 export const Logo = styled.img`
@@ -19,6 +21,13 @@ export const Logo = styled.img`
   height: 43px;
   margin-top: 10px;
   margin-left: 52px;
+`;
+
+export const Main = styled.main`
+  margin-top: 60px;
+  padding: 1rem;
+  overflow-y: auto;
+  flex-grow: 1;
 `;
 
 export const Title = styled.div`
@@ -83,4 +92,19 @@ export const Divider = styled.div`
   background-color: rgba(229, 231, 235, 1);
   padding: 17.5px, 0px, 17.5px, 0px;
   display: flex;
+`;
+
+export const ImageCopy = styled.img`
+  width: 14px;
+  height: 14px;
+`;
+
+export const StyledButton = styled.button`
+  position: absolute;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  right: 8px;
+  top: 22%;
 `;
