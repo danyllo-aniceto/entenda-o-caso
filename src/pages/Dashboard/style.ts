@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface TooltipProps {
+  visible: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +25,10 @@ export const Logo = styled.img`
   height: 43px;
   margin-top: 10px;
   margin-left: 52px;
+
+  @media (max-width: 420px) {
+    margin-left: 0px;
+  }
 `;
 
 export const Main = styled.main`
@@ -30,24 +38,47 @@ export const Main = styled.main`
   flex-grow: 1;
 `;
 
+export const MainContent = styled.div`
+  margin-inline: 189px;
+
+  @media (max-width: 1000px) {
+    margin-inline: 80px;
+  }
+
+  @media (max-width: 650px) {
+    margin-inline: 40px;
+  }
+  @media (max-width: 420px) {
+    margin-inline: 20px;
+  }
+`;
+
 export const Title = styled.div`
   margin-top: 10px;
   height: 75px;
+  @media (max-width: 420px) {
+    margin-top: 2px;
+  }
 `;
 
 export const TextTitle = styled.span`
-  margin-left: 189px;
   font-family: "Gabarito", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 33.6px;
+
+  @media (max-width: 420px) {
+    font-size: 24px;
+  }
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-inline: 189px;
+  @media (max-width: 420px) {
+    gap: 5px;
+  }
 `;
 
 export const Button = styled.button`
@@ -84,6 +115,9 @@ export const ImageButton = styled.img`
 
 export const ContentDivider = styled.div`
   padding-block: 36px;
+  @media (max-width: 420px) {
+    padding-block: 18px;
+  }
 `;
 
 export const Divider = styled.div`
@@ -107,4 +141,21 @@ export const StyledButton = styled.button`
   cursor: pointer;
   right: 8px;
   top: 22%;
+`;
+
+export const Tooltip = styled.div<TooltipProps>`
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+  background-color: #fc4a04;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  transition: opacity 0.3s;
+  width: 100px;
 `;
