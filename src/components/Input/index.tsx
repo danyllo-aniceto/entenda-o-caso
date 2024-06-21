@@ -1,16 +1,32 @@
-import { InputContainer, Label, TextArea, StyledInput } from "./style";
-import { IInputProps } from "./types";
+import { ChangeEvent } from 'react';
+import { InputContainer, Label, TextArea, StyledInput } from './style';
+import { IInputProps } from './types';
+import { validateURL } from '../../utils/validateURL';
 
 export function Input({
   label,
   asTextarea,
-  rows,
+  rows = 14,
   cols,
-  labelFontSize = "17.5px",
-  labelFontWeight = "400",
-  labelFontFamily = "Inter, sans-serif;",
+  labelFontSize = '17.5px',
+  labelFontWeight = '400',
+  labelFontFamily = 'Inter, sans-serif;',
+  isUrl = false,
   ...props
 }: IInputProps) {
+  const handleBlurInput = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (isUrl) {
+      const { value } = event.target;
+      const isValidURL = validateURL(value);
+
+      if (value.length > 0 && !isValidURL) {
+        alert('URL inválida');
+      }
+    }
+  };
+
   return (
     <InputContainer>
       <Label
@@ -25,10 +41,12 @@ export function Input({
           rows={rows}
           cols={cols}
           {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
+          onBlur={handleBlurInput}
         />
       ) : (
         <StyledInput
           {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
+          onBlur={handleBlurInput}
         />
       )}
     </InputContainer>

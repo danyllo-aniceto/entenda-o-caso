@@ -7,4 +7,5 @@ export interface IInputProps
   labelFontSize?: string;
   labelFontWeight?: string;
   labelFontFamily?: string;
+  isUrl?: boolean;
 }

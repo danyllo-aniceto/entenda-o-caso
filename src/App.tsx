@@ -1,5 +1,5 @@
-import GlobalStyle from "./../globalStyle";
-import { Dashboard } from "./pages/Dashboard";
+import { Dashboard } from './pages/Dashboard';
+import GlobalStyle from './styles/globalStyle';
 
 function App() {
   return (

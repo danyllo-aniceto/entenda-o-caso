@@ -16,10 +16,6 @@ export const Label = styled.label<{
   font-weight: ${({ fontWeight }) => fontWeight};
   line-height: 26.25px;
   color: rgba(0, 0, 0, 1);
-
-  @media (max-width: 420px) {
-    font-size: 12px;
-  }
 `;
 
 const inputStyles = `
@@ -40,13 +36,7 @@ const inputStyles = `
      font-weight: 400;
      font-size: 14px;
      line-height: 16.8px;
-
-     @media (max-width: 420px) {
-      font-size: 12px;
-    }
   }
-
-  
 `;
 
 export const StyledInput = styled.input`
